@@ -84,125 +84,37 @@
 					"name": "Agent job",
 					"refName": null,
 					"workflowTasks": [
-						{
-							"environment": {},
-							"taskId": "501dd25d-1785-43e4-b4e5-a5c78ccc0573",
-							"version": "1.*",
-							"name": "Azure Function App Deploy: RxWebCoreApp-AzureFunction",
-							"refName": "",
-							"enabled": true,
-							"alwaysRun": false,
-							"continueOnError": false,
-							"timeoutInMinutes": 0,
-							"definitionType": "task",
-							"overrideInputs": {},
-							"condition": "succeeded()",
-							"inputs": {
-								"azureSubscription": "4f8d3ef9-402c-4a4c-b2b3-861994b649fa",
-								"appType": "functionApp",
-								"appName": "RxWebCoreApp-AzureFunction",
-								"deployToSlotOrASE": "false",
-								"resourceGroupName": "",
-								"slotName": "production",
-								"package": "$(System.DefaultWorkingDirectory)/RxWebCoreApp-CI/RxWebCoreApp-AzureFunction/publish.zip",
-								"runtimeStack": "",
-								"startUpCommand": "",
-								"customWebConfig": "",
-								"appSettings": "",
-								"configurationStrings": "",
-								"deploymentMethod": "zipDeploy"
-							}
-						},
-						{
-							"environment": {},
-							"taskId": "18bde28a-8172-45cb-b204-5cef1393dbb1",
-							"version": "1.*",
-							"name": "Azure Web App Deploy: RxWebCoreAppWebApp",
-							"refName": "",
-							"enabled": true,
-							"alwaysRun": false,
-							"continueOnError": false,
-							"timeoutInMinutes": 0,
-							"definitionType": "task",
-							"overrideInputs": {},
-							"condition": "succeeded()",
-							"inputs": {
-								"azureSubscription": "4f8d3ef9-402c-4a4c-b2b3-861994b649fa",
-								"appType": "webApp",
-								"appName": "RxWebCoreApp-WebApp",
-								"deployToSlotOrASE": "false",
-								"resourceGroupName": "",
-								"slotName": "production",
-								"package": "$(System.DefaultWorkingDirectory)/RxWebCoreApp-CI/RxWebCoreApp-API/publish.zip",
-								"customDeployFolder": "",
-								"runtimeStack": "",
-								"startUpCommand": "",
-								"customWebConfig": "",
-								"appSettings": "",
-								"configurationStrings": "",
-								"deploymentMethod": "zipDeploy"
-							}
-						},
-						{
-							"environment": {},
-							"taskId": "5e1e3830-fbfb-11e5-aab1-090c92bc4988",
-							"version": "1.*",
-							"name": "Extract files ",
-							"refName": "",
-							"enabled": true,
-							"alwaysRun": false,
-							"continueOnError": false,
-							"timeoutInMinutes": 0,
-							"definitionType": "task",
-							"overrideInputs": {},
-							"condition": "succeeded()",
-							"inputs": {
-								"archiveFilePatterns": "$(System.DefaultWorkingDirectory)/RxWebCoreApp-CI/RxWebCoreApp-API/publish.zip",
-								"destinationFolder": "$(System.DefaultWorkingDirectory)/RxWebCoreApp-CI/RxWebCoreApp-API/publish/",
-								"cleanDestinationFolder": "true"
-							}
-						},
-						{
-							"environment": {},
-							"taskId": "eb72cb01-a7e5-427b-a8a1-1b31ccac8a43",
-							"version": "2.*",
-							"name": "AzureBlob File Copy",
-							"refName": "",
-							"enabled": true,
-							"alwaysRun": false,
-							"continueOnError": false,
-							"timeoutInMinutes": 0,
-							"definitionType": "task",
-							"overrideInputs": {},
-							"condition": "succeeded()",
-							"inputs": {
-								"SourcePath": "$(System.DefaultWorkingDirectory)/RxWebCoreApp-CI/RxWebCoreApp-API/publish/",
-								"ConnectedServiceNameSelector": "ConnectedServiceNameARM",
-								"ConnectedServiceName": "",
-								"ConnectedServiceNameARM": "4f8d3ef9-402c-4a4c-b2b3-861994b649fa",
-								"Destination": "AzureBlob",
-								"StorageAccount": "",
-								"StorageAccountRM": "RxWebCoreAppAzureFunction",
-								"ContainerName": "web",
-								"BlobPrefix": "",
-								"EnvironmentName": "",
-								"EnvironmentNameRM": "",
-								"ResourceFilteringMethod": "machineNames",
-								"MachineNames": "",
-								"vmsAdminUserName": "",
-								"vmsAdminPassword": "",
-								"TargetPath": "",
-								"AdditionalArgumentsForBlobCopy": "",
-								"AdditionalArgumentsForVMCopy": "",
-								"enableCopyPrerequisites": "false",
-								"CopyFilesInParallel": "true",
-								"CleanTargetBeforeCopy": "false",
-								"skipCACheck": "true",
-								"outputStorageUri": "",
-								"outputStorageContainerSasToken": ""
-							}
-						}
-					]
+					{
+  "environment": {},
+  "taskId": "6f8c69a5-b023-428e-a125-fccf4efcb929",
+  "version": "2.*",
+  "name": "FTP Upload: RxWebCoreApp",
+  "refName": "",
+  "enabled": true,
+  "alwaysRun": false,
+  "continueOnError": false,
+  "timeoutInMinutes": 0,
+  "definitionType": "task",
+  "overrideInputs": {},
+  "condition": "succeeded()",
+  "inputs": {
+    "credsType": "inputs",
+    "serverEndpoint": "",
+    "serverUrl": "ftp://120.72.91.21:2222",
+    "username": "ajayojha",
+    "password": "ajayojha",
+    "rootFolder": "RxWebCoreApp",
+    "filePatterns": "**",
+    "remotePath": "/abc",
+    "enableUtf8": "false",
+    "clean": "false",
+    "cleanContents": "false",
+    "preservePaths": "false",
+    "trustSSL": "false",
+    "customCmds": ""
+  }
+}
+											]
 				}
 			],
 			"environmentOptions": {
@@ -260,12 +172,12 @@
 	],
 	"artifacts": [
 		{
-			"sourceId": "920630a1-8f6c-433e-8b20-c83800f0826d:1",
+			"sourceId": "fa996968-ff06-4971-959a-cb07991f4bc1:1",
 			"type": "Build",
 			"alias": "RxWebCoreApp-CI",
 			"definitionReference": {
 				"artifactSourceDefinitionUrl": {
-					"id": "https://dev.azure.com/ajayojha/_permalink/_build/index?collectionId=2c858d7a-61ad-4b4f-8a3b-2563f281ea99&projectId=920630a1-8f6c-433e-8b20-c83800f0826d&definitionId=1",
+					"id": "https://dev.azure.com/ajayojha/_permalink/_build/index?collectionId=2c858d7a-61ad-4b4f-8a3b-2563f281ea99&projectId=fa996968-ff06-4971-959a-cb07991f4bc1&definitionId=1",
 					"name": ""
 				},
 				"defaultVersionBranch": {
@@ -285,7 +197,7 @@
 					"name": "Latest"
 				},
 				"definition": {
-					"id": "27",
+					"id": "29",
 					"name": "RxWebCoreApp-CI"
 				},
 				"definitions": {
@@ -297,7 +209,7 @@
 					"name": "False"
 				},
 				"project": {
-					"id": "920630a1-8f6c-433e-8b20-c83800f0826d",
+					"id": "fa996968-ff06-4971-959a-cb07991f4bc1",
 					"name": "RxWebCoreApp"
 				},
 				"repository": {
