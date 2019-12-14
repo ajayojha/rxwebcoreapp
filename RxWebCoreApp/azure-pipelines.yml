@@ -9,7 +9,7 @@ variables:
   solutionFile: 'RxWebCoreApp.sln' 
   apiProject: 'RxWebCoreApp.Api/RxWebCoreApp.Api.csproj' 
 
-  publishApiProjectPath: 'RxWebCoreApp.Api/bin/Release/netcoreapp3.0'
+  publishApiProjectPath: 'RxWebCoreApp\RxWebCoreApp.Api\bin\Release\netcoreapp3.0'
   
   
   buildPlatform: 'Any CPU'
@@ -40,6 +40,7 @@ steps:
     arguments: '/p:configuration=Release'
     zipAfterPublish: false
   displayName: 'Publish Projects'
+
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(publishApiProjectPath)'
