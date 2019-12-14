@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RxWebCoreApp.Domain\RxWebCoreApp.Domain.csproj" />
+    <ProjectReference Include="..\RxWebCoreApp.BoundedContext\RxWebCoreApp.BoundedContext.csproj" />
+    <ProjectReference Include="..\RxWebCoreApp.Models\RxWebCoreApp.Models.csproj" />
+    <ProjectReference Include="..\RxWebCoreApp.Infrastructure\RxWebCoreApp.Infrastructure.csproj" />
+    <ProjectReference Include="..\RxWebCoreApp.UnitOfWork\RxWebCoreApp.UnitOfWork.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.0.0" />
+    <PackageReference Include="RxWeb.Core.AspNetCore" Version="3.0.2" />
+  </ItemGroup>
+
+</Project>

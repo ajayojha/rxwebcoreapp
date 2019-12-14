@@ -1,0 +1,32 @@
+{
+  "projects": {
+    "api": "RxWebCoreApp.Api",
+    "model": "RxWebCoreApp.Models",
+    "context": "RxWebCoreApp.BoundedContext",
+    "domain": "RxWebCoreApp.Domain",
+	"unitOfWork": "RxWebCoreApp.UnitOfWork",
+    "infrastructure": "RxWebCoreApp.Infrastructure",
+    "azureFunctionHttp":"",
+    "portal":"",
+    "azureFunctionBackground":""
+  },
+  "path": {
+    "dbConnection": {
+      "main": "Database.ConnectionString.Main"
+    },
+    "folder": {
+      "model": "DbEntities",
+      "context": "",
+	  "enums": "",
+	  "localizeValidationMessage": "wwwroot"
+    }
+  },
+  "annotations": {
+    "rxweb": false
+  },
+  "config": {
+    "generateEnums": false,
+    "commanTableSchema": "dbo",
+    "validationMessageLocalizationId": "15"
+  }
+}

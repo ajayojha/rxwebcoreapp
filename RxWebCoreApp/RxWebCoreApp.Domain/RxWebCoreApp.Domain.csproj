@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\RxWebCoreApp.BoundedContext\RxWebCoreApp.BoundedContext.csproj" />
+    <ProjectReference Include="..\RxWebCoreApp.UnitOfWork\RxWebCoreApp.UnitOfWork.csproj" />
+    <ProjectReference Include="..\RxWebCoreApp.Models\RxWebCoreApp.Models.csproj" />
+    <ProjectReference Include="..\RxWebCoreApp.Infrastructure\RxWebCoreApp.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+  </PropertyGroup>
+
+</Project>
