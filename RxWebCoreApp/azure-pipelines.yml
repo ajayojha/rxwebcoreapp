@@ -9,7 +9,7 @@ variables:
   solutionFile: 'RxWebCoreApp.sln' 
   apiProject: 'RxWebCoreApp.Api/RxWebCoreApp.Api.csproj' 
 
-  publishApiProjectPath: 'RxWebCoreApp.Api/bin/Release/netcoreapp3.0/publish/'
+  publishApiProjectPath: 'RxWebCoreApp.Api/bin/Release/netcoreapp3.0/'
   
   
   buildPlatform: 'Any CPU'
@@ -26,10 +26,15 @@ steps:
     restoreSolution: '$(solutionFile)'
   displayName: 'Nuget Restore'
 
+  - task: UseDotNet@2
+  inputs:
+    packageType: 'sdk'
+    version: '3.x'
+
 - task: DotNetCoreCLI@2
   inputs:
     command: 'publish'
-    publishWebProjects: false
+    publishWebProjects: true
     projects: |
       $(apiProject)
     arguments: '/p:configuration=Release'
