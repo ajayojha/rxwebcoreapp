@@ -47,3 +47,4 @@ steps:
     ArtifactName: '$(projectName)' 
     publishLocation: 'Container'
   displayName: 'Publish $(projectName)' 
+
