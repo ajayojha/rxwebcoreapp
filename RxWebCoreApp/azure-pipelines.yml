@@ -9,7 +9,7 @@ variables:
   solutionFile: 'RxWebCoreApp.sln' 
   apiProject: 'RxWebCoreApp.Api/RxWebCoreApp.Api.csproj' 
 
-  publishApiProjectPath: 'RxWebCoreApp.Api/bin/Release/netcoreapp3.0/'
+  publishApiProjectPath: 'RxWebCoreApp.Api/bin/Release/netcoreapp3.0/*'
   
   
   buildPlatform: 'Any CPU'
