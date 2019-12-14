@@ -32,7 +32,7 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: 'publish'
-    publishWebProjects: false
+    publishWebProjects: true
     projects: |
       $(apiProject)
     arguments: '/p:configuration=Release'
