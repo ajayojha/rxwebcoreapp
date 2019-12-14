@@ -25,7 +25,10 @@ steps:
   inputs:
     restoreSolution: '$(solutionFile)'
   displayName: 'Nuget Restore'
-
+- task: UseDotNet@2
+  inputs:
+    packageType: 'sdk'
+    version: '3.X'
 - task: DotNetCoreCLI@2
   inputs:
     command: 'publish'
